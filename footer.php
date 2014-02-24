@@ -1,3 +1,4 @@
-<?php wp_footer(); ?>
-</body>
+		</div><?php // .wrap //?>
+	<?php wp_footer(); ?>
+	</body>
 </html>

@@ -20,6 +20,7 @@
 		<?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
+    	<div class="wrap">
     	<aside>
     		<img src="<?php echo get_template_directory_uri() . '/images/logo.svg'; ?>" class="svg logo"/>
     		<ul class="tagline">
@@ -27,4 +28,14 @@
     			<li class="middle">Designer</li>
     			<li class="right"></li>
     		</ul>
+    		<?php 
+    		$nav_defaults = array(
+    			'theme_location'	=> 'Main Menu',
+    			'container' 		=> 'nav',
+    			'container_class'	=> 'main-nav-container',
+    			'menu-class'		=> 'main-nav',
+    			'echo'				=> 'true',
+    			'depth'				=> 3
+    		);
+    		wp_nav_menu( $nav_defaults ); ?>
     	</aside>

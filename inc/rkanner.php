@@ -21,6 +21,15 @@ class Rkanner_Theme {
 		
 	}
 	
+	function after_theme_setup(){
+		
+		register_nav_menus( array(
+			'Main Menu' => 'Main menu location',
+			'Footer Menu' => 'Footer menu location' 
+		);
+		
+	}
+	
 }
 
 $rkanner = new Rkanner_Theme();

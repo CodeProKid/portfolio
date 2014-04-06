@@ -1,6 +1,59 @@
 //styles//
 
-//testing
+// General Styles //
 body{
+	font-family: $bodyFont;
+	background: $lightGray;
+}
+
+//sidebar
+aside.main{
+	background: $mainColor;
+	width: 30%;
+	height: 100%;
+	min-width: 300px;
+	position: fixed;
+	padding: 3% 2.5%;
+	box-sizing: border-box;
+	img.logo{
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.tagline{
+	margin: 10% 0;
+	text-align: center;
+	li{
+		display: inline;
+		color: $white;
+		padding: 0 5px;
+		border-right: 1px solid $white;
+		&.right{
+			border-right: none;
+		}
+	}
+}
+
+.menu{
+	li{
+		padding: 13px 0;
+		text-align: center;
+		a{
+			color: $white;
+			font-size: 1.5em;
+			text-decoration: none;
+		}
+	}
+}
+
+//homepage
+section.hero{
+	width: 70%;
+	float: right;
+	min-height: 100%;
 	display: block;
+	height: 100%;
+	@include background-size(cover);
+	background-position: center center;
 }

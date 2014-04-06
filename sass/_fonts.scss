@@ -1,1 +1,16 @@
 //font settings here//
+$headerFont: "brandon-grotesque",sans-serif;
+$headerFontWeight: bold;
+
+$bodyFont: "museo-slab",serif;
+$bodyFontWeight: 300;
+
+h1, h2, h3, h4, h5, h6{
+	font-family: $headerFont;
+	font-weight: $headerFontWeight;
+	text-transform: uppercase;
+}
+
+p{
+	font-weight: $bodyFontWeight;
+}

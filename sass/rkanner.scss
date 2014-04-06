@@ -1,3 +1,6 @@
+$legacy-support-for-ie: false;
+@import "compass/support";
+@import "compass/reset";
 @import "compass/css3";
 @import "settings";
 @import "fonts";

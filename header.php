@@ -17,12 +17,16 @@
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() . '/core/images/icons'; ?>/images/apple-touch-icon.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri() . '/core/images/icons'; ?>/images/apple-touch-icon-72x72.png">
 		<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri() . '/core/images/icons'; ?>/images/apple-touch-icon-114x114.png">
+		<script type="text/javascript" src="//use.typekit.net/opr6rsp.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
     	<div class="wrap">
-    	<aside>
-    		<img src="<?php echo get_template_directory_uri() . '/images/logo.svg'; ?>" class="svg logo"/>
+    	<aside class="main">
+    		<a href="<?php echo bloginfo( 'url' ); ?>">
+    			<img src="<?php echo get_template_directory_uri() . '/images/logo.svg'; ?>" class="svg logo"/>
+    		</a>
     		<ul class="tagline">
     			<li class="left">Developer</li>
     			<li class="middle">Designer</li>
@@ -39,3 +43,9 @@
     		);
     		wp_nav_menu( $nav_defaults ); ?>
     	</aside>
+    	<section class="hero" style="background-image: url('<?php header_image(); ?>');">
+    		<hgroup>
+    			<h1>Hello!</h1>
+    			<h2>This is a super hipster title</h2>
+    		</hgroup>
+    	</section>

@@ -1,4 +1,4 @@
-// custom JS file
+
 (function($) {
 	$.fn.slideTextLeft = function(words, delay) {
 		var isSingleWord = false;
@@ -67,7 +67,7 @@
 
 jQuery(function() {
 	jQuery(".tagline .right").slideTextLeft({ 
-		words: ["Problem Solver", "Band Geek", "Nerd", "Rabbit Owner", "Thinker"], // multiple words to tranistion through in a loop
+		words: ["Problem Solver", "Band Geek", "Nerd", "Audiophile", "Thinker"], // multiple words to tranistion through in a loop
 		delay: 2000 // the time to wait before the transistion
 	});
 });
@@ -79,6 +79,13 @@ function winHeight(){
 	
 }
 
-jQuery(document).ready(function(){
+//initiate functions when dom is ready.
+jQuery(document).ready(function($){
+
 	winHeight();
+	
+	$('.flexslider').flexslider({
+		animation: "slide"
+	});
+	
 });

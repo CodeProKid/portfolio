@@ -23,29 +23,24 @@
     </head>
     <body <?php body_class(); ?>>
     	<div class="wrap">
-    	<aside class="main">
-    		<a href="<?php echo bloginfo( 'url' ); ?>">
-    			<img src="<?php echo get_template_directory_uri() . '/images/logo.svg'; ?>" class="svg logo"/>
-    		</a>
-    		<ul class="tagline">
-    			<li class="left">Developer</li>
-    			<li class="middle">Designer</li>
-    			<li class="right"></li>
-    		</ul>
-    		<?php 
-    		$nav_defaults = array(
-    			'theme_location'	=> 'Main Menu',
-    			'container' 		=> 'nav',
-    			'container_class'	=> 'main-nav-container',
-    			'menu-class'		=> 'main-nav',
-    			'echo'				=> 'true',
-    			'depth'				=> 3
-    		);
-    		wp_nav_menu( $nav_defaults ); ?>
-    	</aside>
-    	<section class="hero" style="background-image: url('<?php header_image(); ?>');">
-    		<hgroup>
-    			<h1>Hello!</h1>
-    			<h2>This is a super hipster title</h2>
-    		</hgroup>
-    	</section>
+	    	<aside class="main">
+	    		<a href="<?php echo bloginfo( 'url' ); ?>">
+	    			<img src="<?php echo get_template_directory_uri() . '/images/logo.svg'; ?>" class="svg logo"/>
+	    		</a>
+	    		<ul class="tagline">
+	    			<li class="left">Developer</li>
+	    			<li class="middle">Designer</li>
+	    			<li class="right"></li>
+	    		</ul>
+	    		<?php 
+	    		$nav_defaults = array(
+	    			'theme_location'	=> 'Main Menu',
+	    			'container' 		=> 'nav',
+	    			'container_class'	=> 'main-nav-container',
+	    			'menu-class'		=> 'main-nav',
+	    			'echo'				=> 'true',
+	    			'depth'				=> 3
+	    		);
+	    		wp_nav_menu( $nav_defaults ); ?>
+	    	</aside>
+	    	<main>

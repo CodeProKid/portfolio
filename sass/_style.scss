@@ -1,9 +1,19 @@
 //styles//
 
 // General Styles //
+html{
+	font-size: 62.5%; //set to base 10px
+}
+
 body{
 	font-family: $bodyFont;
 	background: $lightGray;
+	@include font-size($bodyFontSize);
+}
+
+main{
+	width: 70%;
+	float: right;
 }
 
 //sidebar
@@ -49,11 +59,46 @@ aside.main{
 
 //homepage
 section.hero{
-	width: 70%;
-	float: right;
-	min-height: 100%;
+	width: 100%;
+	min-height: 400px;;
 	display: block;
 	height: 100%;
 	@include background-size(cover);
 	background-position: center center;
+}
+
+//portfolio grid
+figure.portfolio-item{
+	position: relative;
+	overflow: hidden;
+	img{
+		max-width: 100%;
+		height: auto;
+		@include transition(transform 400ms);
+	}
+	figcaption{
+		position: absolute;
+		width: 100%;
+		background: $mainColor;
+		color: $white;
+		top: auto;
+		bottom: 0;
+		opacity: 0;
+		padding: 10%;
+		z-index: 10;
+		@include transform( translateY(100%) );
+		@include transition(transform 400ms, opacity 400ms);
+		span{
+			@include font-size(1.4);
+		}
+	}
+}
+figure.portfolio-item:hover{
+	img{
+		@include transform( translateY(-50px) );
+	}
+	figcaption{
+		opacity: 1;
+		@include transform( translateY(0) );
+	}
 }

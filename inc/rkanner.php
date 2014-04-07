@@ -10,9 +10,9 @@ class Rkanner_Theme {
 	 */
 	function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'rkanner_after_theme_setup' ) );
-		//add_action( 'init', array( $this, 'init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'rkanner_enqueue_scripts' ), 999 );
 		add_action( 'init', array( $this, 'rkanner_portfolio_posttype' ) );
+		add_action( 'init', array( $this, 'rkanner_portfolio_taxonomy' ) );
 	}
 	
 	function rkanner_enqueue_scripts() {
@@ -20,6 +20,8 @@ class Rkanner_Theme {
 		wp_enqueue_style( 'rkanner', get_template_directory_uri() . '/css/rkanner.css', '', '');
 		wp_enqueue_script( 'jquery');
 		wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery'));
+		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js');
+		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/vendor/jquery.flexslider-min.js', array('jquery'));
 		
 	}
 	
@@ -39,6 +41,9 @@ class Rkanner_Theme {
 		add_theme_support( 'custom-header', $defaults );
 		add_theme_support('post-thumbnails');
 		add_theme_support('post-formats', array( 'status', 'video', 'link', 'quote', 'image'));
+		
+		add_image_size( 'portfolio-grid', 375, 350, true);
+		add_image_size( 'portfolio-slider', 800, 400, true);
 		
 	}
 	
@@ -74,6 +79,29 @@ class Rkanner_Theme {
 		
 		register_post_type( 'portfolio', $args );
 		
+	}
+	
+	function rkanner_portfolio_taxonomy() {
+		
+		$labels = array(
+			'name' => 'Skills',
+			'singular_name'	=> 'Skill',
+			'add_new_item' 	=> 'Add New Skill',
+			'new_item_name'	=> 'New Skill',
+			'all_items'		=> 'All Skills',
+			'edit_item'		=> 'Edit Skill',
+			'view_item'		=> 'View Skill'
+		);
+		
+		$args = array( 
+			'label' 			=> 'Skills',
+			'labels'			=> $labels,
+			'rewrite' 			=> false,
+			'show_admin_column'	=> true,
+			'hierarchical'		=> true
+		);
+		
+		register_taxonomy( 'skills', 'portfolio', $args );
 	}
 	
 }

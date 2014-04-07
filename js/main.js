@@ -72,17 +72,25 @@ jQuery(function() {
 	});
 });
 
-function winHeight(){
-	var height = jQuery(window).height();
-	
-	jQuery('.hero').height(height);
-	
-}
-
 //initiate functions when dom is ready.
 jQuery(document).ready(function($){
 
-	winHeight();
+	var winHeight = $(window).height();
+	$('.hero').height(winHeight);
+	var headerHeight = $('.hero hgroup').height();
+	var hgroupTop = (winHeight/2) - (headerHeight/2)
+	
+	$('.hero hgroup').css({ 'top': hgroupTop });
+	
+	$(window).scroll(function(){
+		var scrollPos = $(this).scrollTop();
+		
+		$('.hero hgroup').css({
+			'top': hgroupTop - (scrollPos/2),
+			'opacity': 1-(scrollPos/300)
+		});
+		
+	});
 	
 	$('.flexslider').flexslider({
 		animation: "slide"

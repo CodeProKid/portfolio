@@ -42,7 +42,7 @@ class Rkanner_Theme {
 		add_theme_support('post-thumbnails');
 		add_theme_support('post-formats', array( 'status', 'video', 'link', 'quote', 'image'));
 		
-		add_image_size( 'portfolio-grid', 375, 350, true);
+		add_image_size( 'portfolio-grid', 550, 500, true);
 		add_image_size( 'portfolio-slider', 800, 400, true);
 		
 	}

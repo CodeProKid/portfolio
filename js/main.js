@@ -76,9 +76,13 @@ jQuery(function() {
 jQuery(document).ready(function($){
 
 	var winHeight = $(window).height();
-	$('.hero').height(winHeight);
+	
+	$('.hero').height( winHeight );
+	
 	var headerHeight = $('.hero hgroup').height();
-	var hgroupTop = (winHeight/2) - (headerHeight/2)
+	var hgroupTop = (winHeight/2) - (headerHeight/2);
+	
+	//alert(headOffset);
 	
 	$('.hero hgroup').css({ 'top': hgroupTop });
 	
@@ -95,5 +99,15 @@ jQuery(document).ready(function($){
 	$('.flexslider').flexslider({
 		animation: "slide"
 	});
+	
+	$('.mobileMenu').click(function(){
+		if ( !$('aside.main').hasClass('clicked') ){
+			$('aside.main').addClass('clicked');
+		}else{
+			$('aside.main').removeClass('clicked');
+		}
+		
+	});
+	
 	
 });

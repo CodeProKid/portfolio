@@ -13,6 +13,7 @@ class Rkanner_Theme {
 		add_action( 'wp_enqueue_scripts', array( $this, 'rkanner_enqueue_scripts' ), 999 );
 		add_action( 'init', array( $this, 'rkanner_portfolio_posttype' ) );
 		add_action( 'init', array( $this, 'rkanner_portfolio_taxonomy' ) );
+		add_action( 'widgets_init', array( $this, 'rkanner_sidebar' ) );
 	}
 	
 	function rkanner_enqueue_scripts() {
@@ -42,8 +43,9 @@ class Rkanner_Theme {
 		add_theme_support('post-thumbnails');
 		add_theme_support('post-formats', array( 'status', 'video', 'link', 'quote', 'image'));
 		
-		add_image_size( 'portfolio-grid', 550, 500, true);
+		add_image_size( 'portfolio-grid', 650, 500, true);
 		add_image_size( 'portfolio-slider', 800, 400, true);
+		add_image_size( 'masthead', 1600, 550, true);
 		
 	}
 	
@@ -102,6 +104,20 @@ class Rkanner_Theme {
 		);
 		
 		register_taxonomy( 'skills', 'portfolio', $args );
+	}
+	
+	function rkanner_sidebar() {
+		
+		$args = array(
+			'name'			=> 'Page Sidebar',
+			'id'			=> 'page-sidebar',
+			'before_widget'	=> '<div clas="widget %2$s">',
+			'after_widget'	=> '</div>',
+			'before_title'	=> '<h2>',
+			'after_title'	=> '</h2>'
+		);
+		register_sidebar( $args );
+		
 	}
 	
 }

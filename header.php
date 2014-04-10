@@ -32,6 +32,9 @@
 	    			<li class="middle">Designer</li>
 	    			<li class="right"></li>
 	    		</ul>
+	    		<div class="mobileMenuHolder">
+	    			<a href="#" class="mobileMenu"><div class="top"></div><div class="middle"></div><div class="bottom"></div></a>
+	    		</div>
 	    		<?php 
 	    		$nav_defaults = array(
 	    			'theme_location'	=> 'Main Menu',

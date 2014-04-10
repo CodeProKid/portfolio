@@ -2,13 +2,18 @@
 
 if ( have_posts() ): while( have_posts() ): the_post();
 ?>
-<header class="title">
-	<h1><?php the_title(); ?></h1>
-</header>
-<article class="portfolioSingle">
+<?php
+	if ( get_field( 'header_image' ) ) {
+		$headerImg = wp_get_attachment_image_src( get_field( 'header_image' ), 'masthead' );
+		$theHeader = $headerImg[0];
+	}
+?>
+<header class="masthead" style="background-image: url(<?php echo $theHeader; ?>);"></header>
+<article class="singleOverlap">
+	<h2><?php the_title(); ?></h2>
 	<section class="grid">
 		<div class="col-3-4">
-			<?php if ( get_field( 'slider_images' )): ?>
+			<?php if ( has_sub_field( 'slider_images' ) ): ?>
 			<div class="flexslider">
 				<ul class="slides">
 					<?php while( has_sub_field( 'slider_images' )): ?>
@@ -19,7 +24,9 @@ if ( have_posts() ): while( have_posts() ): the_post();
 					<?php endwhile; ?>
 				</ul>
 			</div>
-			<?php endif; ?>
+			<?php elseif ( get_field( 'description' ) ):
+				the_field( 'description' );
+			endif; ?>
 		</div>
 		<div class="col-1-4 meta">
 			<?php if ( get_field( 'client' ) ): ?>
@@ -42,7 +49,7 @@ if ( have_posts() ): while( have_posts() ): the_post();
 					foreach ( $terms as $term ){
 						$skills[] = $term->name;
 					}
-					$the_skills = join( ' | ',$skills );
+					$the_skills = join( ' <br> ',$skills );
 					
 					echo '<span>' . $the_skills . '</span>';
 				?>

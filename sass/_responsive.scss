@@ -1,14 +1,23 @@
 @media only screen and (max-width: 1050px){
 	aside.main{
-		position: relative;
-		width: 100%;
-	}
-	.tagline{
-		margin: 15px 0;
+		left: -30%;
+		padding-right: 10%;
+		width: 40%;
+		z-index: 100;
+		@include transition(left 300ms, padding-right 300ms);
+		&.clicked{
+			padding-right: 0;
+			left: 0;
+		}
 	}
 	main{
-		float: none;
-		width: 100%;
+		width: 90%;
+	}
+	section.hero hgroup{
+		width: 90%;
+	}
+	.mobileMenu{
+		display: block;
 	}
 }
 
@@ -34,6 +43,7 @@
 			position: relative;
 			@include transform(none);
 			opacity: 1;
+			padding: 5%;
 		}
 		&:hover{
 			@include transform(none);
@@ -43,6 +53,44 @@
 			img{
 				@include transform(none);
 			}
+		}
+	}
+	aside.main{
+		width: 80%;
+		left: -70%
+	}
+	.mobileMenu{
+		right: 3%;
+	}
+}
+
+@media only screen and (max-width: 600px){
+	aside.main{
+		left: -80%;
+	}
+	main{
+		width: 100%;
+	}
+	section.hero hgroup{
+		width: 100%;
+	}
+	.mobileMenuHolder{
+		position: absolute;
+		width: 130%;
+		height: 50px;
+		right: -130%;
+		top: 0;
+		background: $mainColor;
+		.mobileMenu{
+			top: 5px;
+			left: 10px;
+			right: auto;
+		}
+	}
+	.clicked .mobileMenuHolder{
+		right: -155%;
+		.mobileMenu{
+			left: -32%;
 		}
 	}
 }

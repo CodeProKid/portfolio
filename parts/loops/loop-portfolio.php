@@ -16,13 +16,16 @@
 			<figcaption>
 				<h3><?php the_title(); ?></h3>
 				<?php $terms = get_the_terms( $post->ID, 'skills' ); 
+					if ( $terms && ! is_wp_error( $terms ) ) : 
+						foreach ( $terms as $term ){
+							$skills[] = $term->name;
+						}
+						$the_skills = join( ' | ',$skills );
+						
+						echo '<span>' . $the_skills . '</span>';
+						unset($skills);
+					endif;
 					
-					foreach ( $terms as $term ){
-						$skills[] = $term->name;
-					}
-					$the_skills = join( ' | ',$skills );
-					
-					echo '<span>' . $the_skills . '</span>';
 				?>
 			</figcaption>
 		</figure>

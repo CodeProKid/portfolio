@@ -176,6 +176,7 @@ section.portfolio{
 figure.portfolio-item{
 	position: relative;
 	overflow: hidden;
+	padding: 0;
 	img{
 		max-width: 100%;
 		height: auto;
@@ -238,4 +239,8 @@ section.content{
 	margin-top: 15px;
 	padding-top: 15px;
 	border-top: 1px solid darken( $lightGray, 10% );
+	img{
+		max-width: 100%;
+		height: auto;	
+	}
 }

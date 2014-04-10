@@ -76,7 +76,7 @@ class Rkanner_Theme {
 			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => null,
-			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' )
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'page-attributes' )
 		);
 		
 		register_post_type( 'portfolio', $args );

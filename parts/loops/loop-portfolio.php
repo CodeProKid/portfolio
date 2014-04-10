@@ -1,6 +1,8 @@
 <?php
 	$args = array(
-		'post_type' => 'portfolio'
+		'post_type' => 'portfolio',
+		'orderby'	=> 'menu_order',
+		'order'		=> 'ASC'
 	);
 	$portfolio_query = new WP_Query( $args );
 	

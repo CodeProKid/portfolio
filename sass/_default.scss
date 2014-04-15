@@ -15,6 +15,17 @@ $pad: 20px;
   }
 }
 
+.content .grid{
+	margin: $pad 0;
+	&.split .col-1-2{
+		padding-right: ($pad / 2);
+		&:last-child{
+			padding-right: 0;
+			padding-left: ($pad / 2);
+		}
+	}
+}
+
 [class*='col-'] {
   float: left;
   padding-right: $pad;

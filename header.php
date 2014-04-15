@@ -24,9 +24,11 @@
     <body <?php body_class(); ?>>
     	<div class="wrap">
 	    	<aside class="main">
-	    		<a href="<?php echo bloginfo( 'url' ); ?>">
-	    			<img src="<?php echo get_template_directory_uri() . '/images/logo.svg'; ?>" class="svg logo"/>
-	    		</a>
+	    		<div class="logoHolder">
+		    		<a href="<?php echo bloginfo( 'url' ); ?>">
+		    			<img src="<?php echo get_template_directory_uri() . '/images/logo.svg'; ?>" class="svg logo"/>
+		    		</a>
+	    		</div>
 	    		<ul class="tagline">
 	    			<li class="left">Developer</li>
 	    			<li class="middle">Designer</li>
@@ -44,6 +46,15 @@
 	    			'echo'				=> 'true',
 	    			'depth'				=> 3
 	    		);
-	    		wp_nav_menu( $nav_defaults ); ?>
+	    		wp_nav_menu( $nav_defaults );
+	    		
+	    		$bottom_nav = array(
+	    			'theme_location'	=> 'Footer Menu',
+	    			'container'			=> 'nav',
+	    			'container_class'	=> 'bottom-nav-container',
+	    			'menu-class'		=> 'bottom-nav'
+	    		);
+	    		wp_nav_menu( $bottom_nav );
+	    		?>
 	    	</aside>
 	    	<main>

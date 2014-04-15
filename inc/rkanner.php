@@ -22,6 +22,7 @@ class Rkanner_Theme {
 		wp_enqueue_script( 'jquery');
 		wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery'));
 		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js');
+		wp_enqueue_script( 'ss-icon', get_template_directory_uri() . '/js/vendor/ss-social.js', array('jquery'));
 		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/vendor/jquery.flexslider-min.js', array('jquery'));
 		
 	}

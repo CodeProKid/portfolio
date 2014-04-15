@@ -1,8 +1,9 @@
 <?php
 	$args = array(
-		'post_type' => 'portfolio',
-		'orderby'	=> 'menu_order',
-		'order'		=> 'ASC'
+		'post_type' 		=> 'portfolio',
+		'orderby'			=> 'menu_order',
+		'order'				=> 'ASC',
+		'posts_per_page'	=> 12
 	);
 	$portfolio_query = new WP_Query( $args );
 	

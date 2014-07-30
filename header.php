@@ -7,7 +7,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><?php ( is_front_page() ) ? bloginfo( 'name' ) : wp_title( ' | ' . get_bloginfo( 'name' ), true, 'right' ); ?></title>
-		<meta name="description" content="<?php echo esc_attr( get_bloginfo( 'description' ) ); ?>">
 		<meta name="author" content="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
         <meta name="viewport" content="width=device-width">
         <!--[if lt IE 9]>

@@ -21,10 +21,11 @@ class Rkanner_Theme {
 		$theme_info = wp_get_theme();
 	
 		wp_enqueue_style( 'rkanner', get_template_directory_uri() . '/public/css/rkanner.css', $theme_info->get( 'Version' ), '' );
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'vendor', get_template_directory_uri() . '/public/js/vendor/vendor.min.js', array('jquery'), '', true );
+		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/public/js/vendor/modernizr.js', '', '', true );
+		wp_dequeue_script( 'jquery' );
+		wp_enqueue_script( 'jquery-cdn', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', '', '1.11.2', true );
+		wp_enqueue_script( 'vendor', get_template_directory_uri() . '/public/js/vendor/vendor.min.js', array('jquery-cdn'), '', true );
 		wp_enqueue_script( 'main', get_template_directory_uri() . '/public/js/app.min.js', array('vendor'), '', true );
-		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/public/js/vendor/modernizr.js' );
 		
 	}
 	

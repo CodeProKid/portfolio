@@ -4,7 +4,7 @@
 		padding-right: 10%;
 		width: 40%;
 		z-index: 100;
-		@include transition(left 300ms, padding-right 300ms);
+		transition: left 300ms, padding-right 300ms;
 		&.clicked{
 			padding-right: 0;
 			left: 0;
@@ -41,17 +41,17 @@
 	figure.portfolio-item{
 		figcaption{
 			position: relative;
-			@include transform(none);
+			transform: none;
 			opacity: 1;
 			padding: 5%;
 		}
 		&:hover{
-			@include transform(none);
+			transform: none;
 			figcaption{
 				
 			}
 			img{
-				@include transform(none);
+				transform: none;
 			}
 		}
 	}

@@ -20,12 +20,11 @@ class Rkanner_Theme {
 	
 		$theme_info = wp_get_theme();
 	
-		wp_enqueue_style( 'rkanner', get_template_directory_uri() . '/css/rkanner.css', $theme_info->get( 'Version' ), '');
-		wp_enqueue_script( 'jquery');
-		wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery'), true);
-		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js');
-		wp_enqueue_script( 'ss-icon', get_template_directory_uri() . '/js/vendor/ss-social.js', array('jquery'), true);
-		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/vendor/jquery.flexslider-min.js', array('jquery'), true);
+		wp_enqueue_style( 'rkanner', get_template_directory_uri() . '/public/css/rkanner.css', $theme_info->get( 'Version' ), '' );
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'vendor', get_template_directory_uri() . '/public/js/vendor/vendor.min.js', array('jquery'), '', true );
+		wp_enqueue_script( 'main', get_template_directory_uri() . '/public/js/app.min.js', array('vendor'), '', true );
+		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/public/js/vendor/modernizr.js' );
 		
 	}
 	
